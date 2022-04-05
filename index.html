@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="code.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <title>Calculator</title>
+    </head>
+<body>
+<h1>Таможенный калькулятор</h1>
+
+<div id="selectTypeArea">
+    <button  class="selectTypeSelected" id="selectType1" onclick="show(1)">Легковые авто</button>
+    <button  id="selectType2" onclick="show(2)">Электромобили</button>
+    <button  id="selectType3" onclick="show(3)">Мотоциклы</button>
+    <button  id="selectType4" onclick="show(4)">Грузовые авто</button>
+    <button  id="selectType5" onclick="show(5)">Пассажирские авто</button>
+    <button  id="selectType6" onclick="show(6)">Лодки и гидроциклы</button>
+</div>
+
+<!--Расчет легковые авто-->
+
+<div id="input1">
+    <div class="inputarea">
+    <div class="inputdata">
+        <p>Год производства:</p><input class="input" id="year">
+    </div>
+    <div class="inputdata">
+        <p>Обьем двигателя, куб.см.:</p><input class="input" id="volume">
+    </div>
+    <div class="inputdata">
+        <p>Выберите тип двигателя:</p>
+        <input type="radio" id="RADgasoline" value="gasoline" name="engineType" checked>
+        <label for="gasoline">Бензин</label>
+        <input type="radio" id="RADdiesel" value="diesel" name="engineType">
+        <label for="diesel">Дизель</label>
+    </div>
+    <div class="inputdata">
+        <p>Введите стоимость:</p><input class="input" id="price">
+        <select id="selectcurrency">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        </select>
+    </div>
+    </div>
+
+    <div id="Button">
+        <button onclick="func1()">Рассчитать</button>
+    </div>
+</div>
+
+<!--Расчет электромобили-->
+
+<div id="input2" style="display: none">
+    <div class="inputarea">
+    <div class="inputdata">
+        <p>Емкость батареи, кВт*ч:</p><input class="input" id="batteryVolume">
+    </div>
+    </div>    
+    <div id="Button">
+        <button onclick="func2()">Рассчитать</button>
+    </div>
+</div>
+
+<!--Расчет мото-->
+
+<div id="input3" style="display: none">
+    <div class="inputarea">
+    <div class="inputdata">
+        <p>Обьем двигателя, куб. см.:</p><input class="input" id="volume3">
+    </div>
+    <div class="inputdata">
+        <p>Введите стоимость:</p><input class="input" id="price3">
+        <select id="selectcurrency3">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        </select>
+    </div>
+    </div>
+
+    <div id="Button">
+        <button onclick="func3()">Рассчитать</button>
+    </div>
+</div>
+
+<!--Расчет грузовые-->
+
+<div id="input4" style="display: none">
+    <div class="inputarea">
+    <div class="inputdata5x">
+        <p>Обьем двигателя, куб.см.:</p><input id="volume4">
+    </div>
+
+    <div class="inputdata5x">
+        <p>Тип двигателя:</p>
+        <input type="radio" id="RADgasoline4" value="gasoline" name="engineType4" checked>
+        <label for="gasoline">Бензин</label>
+        <input type="radio" id="RADdiesel4" value="diesel" name="engineType4">
+        <label for="diesel">Дизель</label>
+    </div>
+
+    <div class="inputdata5x">
+        <p>Возраст авто:</p>
+        <select id="selectAge4">
+        <option value="under5">до 5 лет</option>
+        <option value="5to8">5-8 лет</option>
+        <option value="8more">более 8 лет</option>
+        </select>
+    </div>
+
+    <div class="inputdata5x">
+        <p>Грузоподъемность:</p>
+        <select id="selectLoad4">
+        <option value="under5">до 5 тонн</option>
+        <option value="5to20">от 5 до 20 тонн</option>
+        <option value="20more">более 20 тонн</option>
+        </select>
+    </div>
+
+    <div class="inputdata5x">
+        <p>Введите стоимость:</p><input id="price4">
+        <select id="selectcurrency4">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        </select>
+    </div>
+    </div>
+
+    <div id="Button">
+        <button onclick="func4()">Рассчитать</button>
+    </div>
+</div>
+
+<!--Расчет пассажирские-->
+
+<div id="input5" style="display: none">
+    <div class="inputarea">
+    <div class="inputdata">
+        <p>Обьем двигателя, куб.см.:</p><input class="input" id="volume5">
+    </div>
+
+    <div class="inputdata">
+        <p>Тип двигателя:</p>
+        <input type="radio" id="RADgasoline5" value="gasoline" name="engineType5" checked>
+        <label for="gasoline">Бензин</label>
+        <input type="radio" id="RADdiesel5" value="diesel" name="engineType5">
+        <label for="diesel">Дизель</label>
+    </div>
+
+    <div class="inputdata">
+        <p>Возраст авто:</p>
+        <select id="selectAge5">
+        <option value="new">новые</option>
+        <option value="under8">до 8 лет</option>
+        <option value="8more">более 8 лет</option>
+        </select>
+    </div>
+
+    <div class="inputdata">
+        <p>Введите стоимость:</p><input class="input" id="price5">
+        <select id="selectcurrency5">
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="CAD">CAD</option>
+        </select>
+    </div>
+    </div>
+
+    <div id="Button">
+        <button onclick="func5()">Рассчитать</button>
+    </div>
+</div>
+
+<div id="input6" style="display: none">
+    <div class="inputarea">
+
+    <div class="inputdata">
+        <p>Введите стоимость:</p><input id="price6" class="input">
+        <select id="selectcurrency6">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+         <option value="CAD">CAD</option>
+        </select>
+    </div>
+
+    </div>    
+    <div id="Button">
+        <button onclick="func6()">Рассчитать</button>
+    </div>
+</div>
+
+<div class="contentarea">
+
+<!--Рузельтат легковые-->
+
+<div id="Result1">
+<div class="Result"> 
+    <table id="ResultTable">
+        <tr>
+            <td><p>Вид платежа</p></td>
+            <td><p>Основа начисления</p></td>
+            <td><p>Ставка</p></td>
+            <td><p>Сумма</p></td>
+        </tr>
+        <tr>
+            <td><p>Пошлина</p></td>
+            <td><p id="DutyBase1"></p></td>
+            <td><p id="DutyRate1"></p></td>
+            <td><p id="DutyAmount1"></p></td>
+        </tr>
+        <tr>
+            <td><p>Акциз</p></td>
+            <td><p id="ExiceBase1"></p></td>
+            <td><p id="ExiceRate1"></p></td>
+            <td><p id="ExiceAmount1"></p></td>
+        </tr>
+        <tr>
+            <td><p>НДС</p></td>
+            <td><p id="VatBase1"></p></td>
+            <td><p id="VatRate1"></p></td>
+            <td><p id="VatAmount1"></p></td>
+        </tr>
+        <tr>
+            <td colspan="3" rowspan="2"><p>Сумма таможенных платежей:</p></td>
+            <td><p id="resultUSD1"></p></td>
+        </tr>
+        <tr>
+            <td><p id="resultUAH1"></p></td>
+        </tr>
+    </table>
+</div>
+</div>
+
+<!--Рузельтат электромобили-->
+
+<div id="Result2" style="display: none">
+<div class="Result"> 
+    <table id="ResultTable">
+        <tr>
+            <td><p>Вид платежа</p></td>
+            <td><p>Основа начисления</p></td>
+            <td><p>Ставка</p></td>
+            <td><p>Сумма</p></td>
+        </tr>
+        <tr>
+            <td><p>Пошлина</p></td>
+            <td><p id="DutyBase2"></p></td>
+            <td><p id="DutyRate2"></p></td>
+            <td><p id="DutyAmount2"></p></td>
+        </tr>
+        <tr>
+            <td><p>Акциз</p></td>
+            <td><p id="ExiceBase2"></p></td>
+            <td><p id="ExiceRate2"></p></td>
+            <td><p id="ExiceAmount2"></p></td>
+        </tr>
+        <tr>
+            <td><p>НДС</p></td>
+            <td><p id="VatBase2"></p></td>
+            <td><p id="VatRate2"></p></td>
+            <td><p id="VatAmount2"></p></td>
+        </tr>
+        <tr>
+            <td colspan="3" rowspan="2"><p>Сумма таможенных платежей:</p></td>
+            <td><p id="resultUSD2"></p></td>
+        </tr>
+        <tr>
+            <td><p id="resultUAH2"></p></td>
+        </tr>
+    </table>
+</div>
+</div>
+
+<!--Рузельтат мото-->
+
+<div id="Result3" style="display: none">
+<div class="Result"> 
+    <table id="ResultTable">
+        <tr>
+            <td><p>Вид платежа</p></td>
+            <td><p>Основа начисления</p></td>
+            <td><p>Ставка</p></td>
+            <td><p>Сумма</p></td>
+        </tr>
+        <tr>
+            <td><p>Пошлина</p></td>
+            <td><p id="DutyBase3"></p></td>
+            <td><p id="DutyRate3"></p></td>
+            <td><p id="DutyAmount3"></p></td>
+        </tr>
+        <tr>
+            <td><p>Акциз</p></td>
+            <td><p id="ExiceBase3"></p></td>
+            <td><p id="ExiceRate3"></p></td>
+            <td><p id="ExiceAmount3"></p></td>
+        </tr>
+        <tr>
+            <td><p>НДС</p></td>
+            <td><p id="VatBase3"></p></td>
+            <td><p id="VatRate3"></p></td>
+            <td><p id="VatAmount3"></p></td>
+        </tr>
+        <tr>
+            <td colspan="3" rowspan="2"><p>Сумма таможенных платежей:</p></td>
+            <td><p id="resultUSD3"></p></td>
+        </tr>
+        <tr>
+            <td><p id="resultUAH3"></p></td>
+        </tr>
+    </table>
+</div>
+</div>
+
+<!--Рузельтат грузовые-->
+
+<div id="Result4" style="display: none">
+    <div class="Result"> 
+        <table id="ResultTable">
+            <tr>
+                <td><p>Вид платежа</p></td>
+                <td><p>Основа начисления</p></td>
+                <td><p>Ставка</p></td>
+                <td><p>Сумма</p></td>
+            </tr>
+            <tr>
+                <td><p>Пошлина</p></td>
+                <td><p id="DutyBase4"></p></td>
+                <td><p id="DutyRate4"></p></td>
+                <td><p id="DutyAmount4"></p></td>
+            </tr>
+            <tr>
+                <td><p>Акциз</p></td>
+                <td><p id="ExiceBase4"></p></td>
+                <td><p id="ExiceRate4"></p></td>
+                <td><p id="ExiceAmount4"></p></td>
+            </tr>
+            <tr>
+                <td><p>НДС</p></td>
+                <td><p id="VatBase4"></p></td>
+                <td><p id="VatRate4"></p></td>
+                <td><p id="VatAmount4"></p></td>
+            </tr>
+            <tr>
+                <td colspan="3" rowspan="2"><p>Сумма таможенных платежей:</p></td>
+                <td><p id="resultUSD4"></p></td>
+            </tr>
+            <tr>
+                <td><p id="resultUAH4"></p></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--Рузельтат пассажирские-->
+
+<div id="Result5" style="display: none">
+    <div class="Result"> 
+        <table id="ResultTable">
+            <tr>
+                <td><p>Вид платежа</p></td>
+                <td><p>Основа начисления</p></td>
+                <td><p>Ставка</p></td>
+                <td><p>Сумма</p></td>
+            </tr>
+            <tr>
+                <td><p>Пошлина</p></td>
+                <td><p id="DutyBase5"></p></td>
+                <td><p id="DutyRate5"></p></td>
+                <td><p id="DutyAmount5"></p></td>
+            </tr>
+            <tr>
+                <td><p>Акциз</p></td>
+                <td><p id="ExiceBase5"></p></td>
+                <td><p id="ExiceRate5"></p></td>
+                <td><p id="ExiceAmount5"></p></td>
+            </tr>
+            <tr>
+                <td><p>НДС</p></td>
+                <td><p id="VatBase5"></p></td>
+                <td><p id="VatRate5"></p></td>
+                <td><p id="VatAmount5"></p></td>
+            </tr>
+            <tr>
+                <td colspan="3" rowspan="2"><p>Сумма таможенных платежей:</p></td>
+                <td><p id="resultUSD5"></p></td>
+            </tr>
+            <tr>
+                <td><p id="resultUAH5"></p></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!--Рузельтат лодки-->
+
+<div id="Result6" style="display: none">
+    <div class="Result"> 
+        <table id="ResultTable">
+            <tr>
+                <td><p>Вид платежа</p></td>
+                <td><p>Основа начисления</p></td>
+                <td><p>Ставка</p></td>
+                <td><p>Сумма</p></td>
+            </tr>
+            <tr>
+                <td><p>Пошлина</p></td>
+                <td><p id="DutyBase6"></p></td>
+                <td><p id="DutyRate6"></p></td>
+                <td><p id="DutyAmount6"></p></td>
+            </tr>
+            <tr>
+                <td><p>Акциз</p></td>
+                <td><p id="ExiceBase6"></p></td>
+                <td><p id="ExiceRate6"></p></td>
+                <td><p id="ExiceAmount6"></p></td>
+            </tr>
+            <tr>
+                <td><p>НДС</p></td>
+                <td><p id="VatBase6"></p></td>
+                <td><p id="VatRate6"></p></td>
+                <td><p id="VatAmount6"></p></td>
+            </tr>
+            <tr>
+                <td colspan="3" rowspan="2"><p>Сумма таможенных платежей:</p></td>
+                <td><p id="resultUSD6"></p></td>
+            </tr>
+            <tr>
+                <td><p id="resultUAH6"></p></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div id="ExchangeData">
+    <table>
+        <tr>
+            <td colspan="2"><p id="exchangedate"></p></td>
+        </tr> 
+        <tr>
+            <td><p id="exchangeUSD1"></p></td>
+            <td><p id="exchangeUSD2"></p></td>
+
+        </tr>
+        <tr>
+            <td><p id="exchangeEUR1"></p></td>
+            <td><p id="exchangeEUR2"></p></td>
+        </tr>
+        <tr>
+            <td><p id="exchangeCAD1"></p></td>
+            <td><p id="exchangeCAD2"></p></td>
+        </tr>
+    </table>
+</div>
+
+</div>
+
+</body>
+</html>

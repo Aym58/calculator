@@ -1,0 +1,196 @@
+html{
+	background-color: #f7fcff;
+}
+
+body, table, head, select, button, h1, p, div, tr, th, td, a {
+	margin:0;
+	padding:0;
+}
+
+body{
+	width: 936px;
+	margin: 0 auto;
+	font-family: Calibri, sans-serif;
+	background-color: #e1f1f8;
+	padding: 14px;
+	font-size: 15px;
+}
+
+
+h1{
+	display: block;
+	font-size: 26px;
+	padding: 20px 0;
+}
+
+p{
+	margin: 4px 0;
+}
+
+button {
+
+	font-family: Calibri, sans-serif;
+	border: 1px solid;
+	font-size: 15px;
+	width: 165px;
+	height: 32px;
+	text-align: center;
+	background-color: #fcfcfc;
+    -webkit-transition-duration: 0.1s; /* Safari */
+    transition-duration: 0.1s;
+	border-color: #525252;
+	-webkit-border-color: #525252;
+	-moz-border-color: #525252;
+}
+
+table {
+	font-size: 15px;
+}
+
+button:hover {
+    background-color: #525252;
+    color: white;
+	border: none;
+	border-color: #525252;
+	-webkit-border-color: #525252;
+	-moz-border-color: #525252;
+}
+
+#selectTypeArea button:last-child{
+	border: 1px solid;
+	border-color: #525252;
+	-webkit-border-color: #525252;
+	-moz-border-color: #525252;
+}
+
+#selectTypeArea button{
+	display: block;
+	float: left;
+	width: 156px;
+	height: 80px;
+	border-style: solid;
+    border-width: 1px 0 1px 1px;
+}
+
+.selectTypeSelected{
+	background-color: #b6e3f8;
+	display: block;
+	float: left;
+	width: 156px;
+	height: 80px;
+}
+
+.input{
+	width: 140px;
+}
+
+#selectTypeArea{
+	width: 936px;
+	height: 78px;
+	margin: 14px 0;
+	display: table;
+    border-collapse:collapse;
+}
+
+.inputdata5x {
+	position: realtive;
+	float: left;
+	width: 184px;
+	padding: 20px 0px;
+}
+
+#volume4, #price4 {
+	width: 100px;
+}
+
+.inputdata {
+	position: realtive;
+	float: left;
+	width: 230px;
+	padding: 20px 0px;
+	vertical-align: baseline;
+}
+
+.inputarea {
+	position: realtive;
+	width: 100%;
+	height: 100px;
+}
+
+.contentarea{
+	width: 100%;
+	height: 200px;
+}
+
+#Button{
+	position: realtive;
+	width: 100%;
+	height: 30px;
+	padding-bottom: 30px;
+	border-color: #525252;
+}
+
+.Result{
+	position: realtive;
+	width: 656px;
+	float: left;
+}
+
+#ResultTable {
+	width: 100%;
+	border: 1px solid;
+	border-color: #525252;
+	border-collapse: collapse;
+	
+}
+
+td{
+	height: 32px;
+}
+
+#ResultTable td {
+	border: 1px solid;
+	border-color: #525252;
+	padding: 0 10px;
+	width: 25%;
+}
+
+#ExchangeData{
+	width: 250px;
+	position: realtive;
+	float: left;
+	margin-left: 30px;
+}
+
+#ExchangeData table {
+	width: 100%;
+	border: 1px solid;
+	border-color: #525252;
+	border-collapse: collapse;
+}
+
+#ExchangeData td {
+	border: 1px solid;
+	border-color: #525252;
+	padding: 0 10px;
+}
+
+#resultUAH1, #resultUAH2, #resultUAH3, #resultUAH4, #resultUAH5, #resultUAH6 {
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
